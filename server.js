@@ -12,8 +12,8 @@ app.get('/', (req, res) => {
   res.status(404).json('Sorry, page not found')
 })
 
-// const beansController = require('./controllers/beans');
-// app.use('/beans', beansController);
+const beansController = require('./controllers/beans');
+app.use('/beans', beansController);
 
 mongoose.connect('mongodb://localhost:27017/beansapp', {
   useNewUrlParser: true,
