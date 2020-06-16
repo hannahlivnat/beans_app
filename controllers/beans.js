@@ -1,14 +1,14 @@
-const express = router('express');
+const express = require('express');
 const router = express.Router();
 
-// const Beans = requires('../models/bean.js');
+const Beans = require('../models/bean.js');
 
 //INDEX
-// router.get('/', (req, res) => {
-//   Beans.find({}, (err, foundBeans) => {
-//     res.json(foundBeans);
-//   })
-// });
+router.get('/', (req, res) => {
+  Beans.find({}, (err, foundBeans) => {
+    res.json(foundBeans);
+  })
+});
 
 //CREATE
 
