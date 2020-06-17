@@ -1,12 +1,23 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" ng-app>
+<html lang="en" dir="ltr" ng-app="BeansApp">
   <head>
     <meta charset="utf-8">
     <title></title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js" charset="utf-8"></script>
     <script src="/js/app.js" charset="utf-8"></script>
   </head>
-  <body>
-    {{2+2}}
+  <body ng-controller="MyController as ctrl">
+    <header>
+      <h1>Beans of the World!</h1>
+    </header>
+    <div class="container">
+      <button type="button" ng-click="ctrl.toggleNewForm()">Add New Bean</button>
+      <form ng-show="ctrl.newForm">
+        Name: <input type="text" name="name" ng-model="ctrl.createForm.name">
+        Image: <input type="text" name="img" ng-model="ctrl.createForm.img">
+        Origin: <input type="text" name="origin" ng-model="ctrl.createForm.origin">
+        Recipe: <input type="text" name="recipe" ng-model="ctrl.createForm.recipe">
+      </form>
+    </div>
   </body>
 </html>
