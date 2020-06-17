@@ -20,5 +20,24 @@
         <input type="submit" value="Create New Bean">
       </form>
     </div>
+    <div class="cardholder">
+      <div class="card" ng-repeat="bean in ctrl.beans">
+        <div class="beanimg">
+          <img src="{{bean.img}}" alt="{{bean.name}}">
+        </div>
+        <div class="bean-info">
+          <p>{{bean.name}}</p>
+          <p>{{bean.origin}}</p>
+          <p>{{bean.recipe}}</p>
+          <div class="button">
+            <button type="button">Delete</button>
+            <button type="button">Edit</button>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
   </body>
 </html>
