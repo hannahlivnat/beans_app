@@ -10,7 +10,7 @@ app.controller('MyController', ['$http', function($http) {
   this.newForm = false;
 
   this.toggleNewForm = () => {
-
+    this.newForm = !this.newForm;
   }
 
   //INDEX
@@ -19,7 +19,7 @@ app.controller('MyController', ['$http', function($http) {
       method: 'GET',
       url: '/beans'
     }).then((response) => {
-      console.log(response);
+      //console.log(response);
     }, (error) => {
       console.log(error);
     })
