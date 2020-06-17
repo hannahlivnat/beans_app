@@ -5,6 +5,13 @@ app.controller('MyController', ['$http', function($http) {
   this.img = null;
   this.origin = null;
   this.recipe = null;
+  this.beans = [];
+  this.createForm = {};
+  this.newForm = false;
+
+  this.toggleNewForm = () => {
+
+  }
 
   //INDEX
   this.getBeans = () => {
@@ -24,15 +31,11 @@ app.controller('MyController', ['$http', function($http) {
     $http({
       method:'POST',
       url:'/beans',
-      data:
-      {
-        name: this.name,
-        img: this.img,
-        origin: this.origin,
-        recipe: this.recipe
-      }
+      data: this.createForm
     }).then((response) => {
-      console.log(response);
+      this.beans.unshift(response.data);
+      this.createForm = {}
+      console.log(this.beans);
       //this.getBeans();
     }, (error) => {
       console.log(error);
