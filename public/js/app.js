@@ -58,7 +58,7 @@ app.controller('MyController', ['$http', function($http) {
       url: '/beans/' + bean._id
     }).then((response) => {
       console.log(response);
-      //this.getBeans();
+      this.getBeans();
     }, (error) => {
       console.log(error);
     })
@@ -69,9 +69,12 @@ app.controller('MyController', ['$http', function($http) {
     console.log('updated');
     $http({
       method:'PUT',
-      url:'/beans/' + bean._id
+      url:'/beans/' + bean._id,
+      data: this.createForm
     }).then((response) => {
-      console.log(response);
+      // console.log(response);
+      this.getBeans();
+      this.createForm = {};
     }, (error) => {
       console.log(error);
     })
