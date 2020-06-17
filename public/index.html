@@ -12,11 +12,12 @@
     </header>
     <div class="container">
       <button type="button" ng-click="ctrl.toggleNewForm()">Add New Bean</button>
-      <form ng-show="ctrl.newForm">
+      <form ng-show="ctrl.newForm" ng-submit="ctrl.createBean()">
         Name: <input type="text" name="name" ng-model="ctrl.createForm.name">
         Image: <input type="text" name="img" ng-model="ctrl.createForm.img">
         Origin: <input type="text" name="origin" ng-model="ctrl.createForm.origin">
         Recipe: <input type="text" name="recipe" ng-model="ctrl.createForm.recipe">
+        <input type="submit" value="Create New Bean">
       </form>
     </div>
   </body>

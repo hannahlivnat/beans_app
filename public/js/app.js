@@ -10,7 +10,7 @@ app.controller('MyController', ['$http', function($http) {
   this.newForm = false;
 
   this.toggleNewForm = () => {
-
+    this.newForm = !this.newForm;
   }
 
   //INDEX
