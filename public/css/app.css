@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Sriracha');
+
 html, body {
   width: 100%;
   height: 100%;
@@ -11,7 +13,12 @@ body {
 
 header {
   width: 100%;
+}
 
+h1 {
+  text-align: center;
+  font-size: 4rem;
+  font-family: 'Sriracha', cursive;
 }
 
 .container {
@@ -19,11 +26,46 @@ header {
   margin: auto;
 }
 
+.button {
+  padding: .5rem 1rem;
+  background-color: #b7a194;
+  box-shadow: 2px 2px 4px #cccccc;
+  font-family: monospace;
+  margin: 1rem auto;
+  display: block;
+  outline: none;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button:active {
+  box-shadow: inset 2px 2px 4px #cccccc;
+
+}
+
+form {
+  background-color: #ffffff;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+form input[type="text"] {
+  width: 98%;
+  margin: .5rem 0 1rem 0;
+  padding: .5rem 0;
+  font-family: monospace;
+}
+
+
+
 .cardholder {
   width: 100%;
   display: flex;
   flex-flow: row wrap; 
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin: 2rem 0;
   box-sizing: border-box;
 }
@@ -40,10 +82,52 @@ header {
 
 .beanimg {
   width: 100%;
-  height: 150px;
+  height: 300px;
 }
 
 .beanimg img {
   width: 100%;
   height: 100%;
+}
+
+.bean-info {
+  display:flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bean-info p, a {
+  font-family: monospace;
+  font-size: 1.2rem;
+  letter-spacing: .02rem;
+  color: #000000;
+  text-decoration: none;
+}
+
+.bean-info a:hover {
+  text-decoration: underline;
+}
+
+.button-holder {
+  margin-top: 1.5rem
+}
+
+.button-holder button {
+  padding: .5rem 1rem;
+  background-color: #b7a194;
+  box-shadow: 2px 2px 4px #cccccc;
+  font-family: monospace;
+  margin: 1rem auto;
+  outline: none;
+
+}
+
+.button-holder button:hover {
+  cursor: pointer;
+}
+
+.button-holder button:active {
+  box-shadow: inset 2px 2px 4px #cccccc;
+
 }
