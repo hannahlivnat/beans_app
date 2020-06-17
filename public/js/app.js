@@ -8,9 +8,17 @@ app.controller('MyController', ['$http', function($http) {
   this.beans = [];
   this.createForm = {};
   this.newForm = false;
+  this.editForm = false;
+  this.index = null;
 
   this.toggleNewForm = () => {
     this.newForm = !this.newForm;
+  }
+
+  this.toggleEditForm = (index) => {
+    this.editForm = !this.editForm
+    this.index = index
+    console.log(index);
   }
 
   //INDEX
@@ -47,7 +55,7 @@ app.controller('MyController', ['$http', function($http) {
     console.log('deleted', bean._id);
     $http({
       method: 'DELETE',
-      url: '/beans/' + id
+      url: '/beans/' + bean._id
     }).then((response) => {
       console.log(response);
       //this.getBeans();

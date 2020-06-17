@@ -17,7 +17,8 @@
         Name: <input type="text" name="name" ng-model="ctrl.createForm.name">
         Image: <input type="text" name="img" ng-model="ctrl.createForm.img">
         Origin: <input type="text" name="origin" ng-model="ctrl.createForm.origin">
-        Recipe: <input type="text" name="recipe" ng-model="ctrl.createForm.recipe">
+        Recipe Name: <input type="text" name="recipename" ng-model="ctrl.createForm.recipename">
+        Recipe Link: <input type="text" name="recipelink" ng-model="ctrl.createForm.recipelink">
         <input type="submit" value="Create New Bean">
       </form>
     </div>
@@ -29,13 +30,20 @@
         <div class="bean-info">
           <p>{{bean.name}}</p>
           <p>{{bean.origin}}</p>
-          <p>{{bean.recipe}}</p>
+          <a href="{{bean.recipelink}}">{{bean.recipename}}</a>
           <div class="button">
-            <button type="button">Delete</button>
-            <button type="button">Edit</button>
+            <button type="button" ng-click="ctrl.deleteBean(bean)">Delete</button>
+            <button type="button" ng-click="ctrl.toggleEditForm($index)">Edit</button>
           </div>
         </div>
-
+        <form ng-submit="ctrl.updatedBean(bean)" ng-show="ctrl.editForm" ng-if="$index === ctrl.index">
+          Name: <input type="text" name="name" ng-model="ctrl.createForm.name" value="{{bean.name}}">
+          Image: <input type="text" name="img" ng-model="ctrl.createForm.img" value="{{bean.img}}">
+          Origin: <input type="text" name="origin" ng-model="ctrl.createForm.origin" value="{{bean.origin}}">
+          Recipe Name: <input type="text" name="recipename" ng-model="ctrl.createForm.recipename" value="{{bean.recipename}}">
+          Recipe Link: <input type="text" name="recipelink" ng-model="ctrl.createForm.recipelink" value="{{bean.recipelink}}">
+          <input type="submit" value="Edit {{bean.name}}">
+        </form>
 
       </div>
 
