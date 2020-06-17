@@ -4,7 +4,8 @@ const beanSchema = new mongoose.Schema({
   name:String,
   img:String,
   origin:String,
-  recipe:String
+  recipename:String,
+  recipelink:String
 });
 
 const Beans = mongoose.model('Bean', beanSchema);
