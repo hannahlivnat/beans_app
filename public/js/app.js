@@ -19,7 +19,7 @@ app.controller('MyController', ['$http', function($http) {
       method: 'GET',
       url: '/beans'
     }).then((response) => {
-      console.log(response);
+      this.beans = response.data
     }, (error) => {
       console.log(error);
     })
